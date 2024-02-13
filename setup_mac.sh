@@ -36,14 +36,14 @@ cp -r ./.config/nvim ~/.config/
 brew install yazi ffmpegthumbnailer unar jq poppler fd ripgrep fzf zoxide
 brew tap homebrew/cask-fonts && brew install --cask font-symbols-only-nerd-font
 
-brew install lazygit unzip wget 
+brew install lazygit wget 
 
 # Install fonts
 cp ./font/* ~/Library/Fonts/
 
 # Install iterm
-if [ mdfind "kMDItemKind == 'Application'" | grep 'iTerm.app' &> /dev/null ]; then
-  wget -o iterm.zip https://iterm2.com/downloads/stable/latest
+if ! mdfind "kMDItemKind == 'Application'" | grep 'iTerm.app' &> /dev/null; then
+  wget -O iterm.zip https://iterm2.com/downloads/stable/latest
   unzip iterm.zip
   mv iTerm.app /Applications
 fi
