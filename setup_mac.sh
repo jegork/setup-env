@@ -5,7 +5,7 @@ cp ./.p10k.zsh ~/.p10k.zsh
 cp ./.iterm2_shell_integration.zsh ~/.iterm2_shell_integration.zsh
 
 # Install brew
-if command -v brew ; then 
+if command -v brew &> /dev/null ; then 
   echo 'brew exists'
 else 
   echo 'brew does not exists, installing...'
