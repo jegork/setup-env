@@ -61,19 +61,39 @@ require("lspconfig").lua_ls.setup {
   },
 }
 
--- vim.rustaceanvim.server.on_attach = M.on_attach;
--- vim.rustaceanvim.server.capabilities = M.capabilities;
-
--- require("lspconfig").rust_analyzer.setup {
---   on_attach = M.on_attach,
---   capabilities = M.capabilities,
--- }
+require("lspconfig").pyright.setup {
+  on_attach = M.on_attach,
+  capabilities = M.capabilities,
+  settings = {
+    pyright = { autoImportCompletion = true },
+    python = {
+      analysis = {
+        autoSearchPaths = true,
+        diagnosticMode = "openFilesOnly",
+        useLibraryCodeForTypes = true,
+        diagnosticSeverityOverrides = {
+          reportAssignmentType = "none",
+        },
+      },
+    },
+  },
+}
 
 require("lspconfig").ruff_lsp.setup {
   on_attach = M.on_attach,
   capabilities = M.capabilities,
 
-  settings = {}
+  settings = {},
+}
+
+local null_ls = require "null-ls"
+local diagnostics = null_ls.builtins.diagnostics
+null_ls.setup {
+  on_attach = M.on_attach,
+  capabilities = M.capabilities,
+  sources = {
+    diagnostics.mypy.with { extra_args = { "--ignore-missing-imports" } },
+  },
 }
 
 return M

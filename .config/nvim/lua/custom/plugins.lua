@@ -1,5 +1,10 @@
 local overrides = require "custom.configs.overrides"
 
+
+function reactive_null_ls(venv_path, venv_python)
+  --- your custom integration here
+end
+
 ---@type NvPluginSpec[]
 local plugins = {
 
@@ -27,6 +32,10 @@ local plugins = {
   {
     "nvim-tree/nvim-tree.lua",
     opts = overrides.nvimtree,
+  },
+
+  {
+    "jose-elias-alvarez/null-ls.nvim",
   },
 
   -- Install a plugin
@@ -58,6 +67,19 @@ local plugins = {
     config = function()
       require "custom.configs.conform"
     end,
+  },
+  {
+    "linux-cultist/venv-selector.nvim",
+    dependencies = { "neovim/nvim-lspconfig", "nvim-telescope/telescope.nvim", "mfussenegger/nvim-dap-python" },
+    config = function()
+      require("venv-selector").setup {
+        -- changed_venv_hooks = { 
+        --   venv_selector.hooks.pyright },
+        name = { "venv", ".venv" },
+      }
+    end,
+    event = "VeryLazy", -- Optional: needed only if you want to type `:VenvSelect` without a keymapping
+    keys = {},
   },
 
   -- To make a plugin not be loaded
