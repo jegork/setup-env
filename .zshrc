@@ -37,7 +37,7 @@ COMPLETION_WAITING_DOTS="true"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-plugins=(git macos dotenv)
+plugins=(git macos dotenv poetry)
 
 source $ZSH/oh-my-zsh.sh
 touch ~/custom.sh && source ~/custom.sh
