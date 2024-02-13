@@ -15,3 +15,30 @@ end
 
 -- 
 -- lspconfig.pyright.setup { blabla}
+lspconfig.pyright.setup {
+  settings = {
+    pyright = { autoImportCompletion = true },
+    python = {
+      analysis = {
+        autoSearchPaths = true,
+        diagnosticMode = "openFilesOnly",
+        useLibraryCodeForTypes = true,
+        diagnosticSeverityOverrides = {
+          reportAssignmentType = "none",
+        },
+      },
+    },
+  },
+}
+
+lspconfig.ruff_lsp.setup {}
+
+local null_ls = require "null-ls"
+local diagnostics = null_ls.builtins.diagnostics
+null_ls.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  sources = {
+    diagnostics.mypy.with { extra_args = { "--ignore-missing-imports" } },
+  },
+}

@@ -36,8 +36,7 @@ cp -r ./.config/nvim ~/.config/
 brew install yazi ffmpegthumbnailer unar jq poppler fd ripgrep fzf zoxide
 brew tap homebrew/cask-fonts && brew install --cask font-symbols-only-nerd-font
 
-brew install lazygit wget 
-
+brew install lazygit wget node 
 # Install fonts
 cp ./font/* ~/Library/Fonts/
 

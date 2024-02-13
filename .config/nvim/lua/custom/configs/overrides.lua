@@ -12,6 +12,9 @@ M.treesitter = {
     "c",
     "markdown",
     "markdown_inline",
+    "vimdoc",
+    "python",
+    "rust",
   },
   indent = {
     enable = true,
@@ -39,6 +42,12 @@ M.mason = {
     "clang-format",
 
     "pyright",
+    "mypy",
+    "yamllint",
+    "ruff",
+    "ruff-lsp",
+
+    "rust-analyzer",
   },
 }
 
