@@ -59,7 +59,7 @@ M.nvimtree = {
 
   filters = {
     git_ignored = false,
-    custom = {".mypy_cache", ".ruff_cache", ".pytest_cache", ".git"}
+    custom = {".mypy_cache", ".ruff_cache", ".pytest_cache", ".git", "__pycache__"}
   },
 
   renderer = {
