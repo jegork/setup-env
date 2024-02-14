@@ -18,6 +18,15 @@ vim.api.nvim_create_autocmd("VimEnter", {
   once = true,
 })
 
+local function open_nvim_tree()
+
+  -- open the tree
+  require("nvim-tree.api").tree.open()
+end
+
+
+vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
+
 vim.api.nvim_create_user_command("NullLsToggle", function()
   -- you can also create commands to disable or enable sources
   local null_ls = require "null-ls"

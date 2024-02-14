@@ -57,6 +57,11 @@ M.nvimtree = {
     enable = true,
   },
 
+  filters = {
+    git_ignored = false,
+    custom = {".mypy_cache", ".ruff_cache", ".pytest_cache", ".git"}
+  },
+
   renderer = {
     highlight_git = true,
     icons = {
