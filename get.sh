@@ -3,5 +3,6 @@ rsync -a --exclude='**/.git' --exclude='**/.github' --exclude='**/cache' ~/.oh-m
 
 mkdir -p .config
 cp -r ~/.config/iterm2_profile .config/
+cp -r ~/.config/yazi .config/
 
 rsync -a --exclude='**/.git' --exclude="**/.github" --exclude="**/.gitignore" ~/.config/nvim .config/

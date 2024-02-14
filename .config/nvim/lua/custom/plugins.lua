@@ -1,6 +1,5 @@
 local overrides = require "custom.configs.overrides"
 
-
 function reactive_null_ls(venv_path, venv_python)
   --- your custom integration here
 end
@@ -73,7 +72,7 @@ local plugins = {
     dependencies = { "neovim/nvim-lspconfig", "nvim-telescope/telescope.nvim", "mfussenegger/nvim-dap-python" },
     config = function()
       require("venv-selector").setup {
-        -- changed_venv_hooks = { 
+        -- changed_venv_hooks = {
         --   venv_selector.hooks.pyright },
         name = { "venv", ".venv" },
       }
@@ -82,6 +81,12 @@ local plugins = {
     keys = {},
   },
 
+  {
+    "Asheq/close-buffers.vim",
+    lazy = false,
+  },
+
+  { "kiran94/s3edit.nvim", config = true, cmd = "S3Edit" },
   -- To make a plugin not be loaded
   -- {
   --   "NvChad/nvim-colorizer.lua",
