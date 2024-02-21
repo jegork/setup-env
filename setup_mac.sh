@@ -47,6 +47,8 @@ if ! mdfind "kMDItemKind == 'Application'" | grep 'iTerm.app' &> /dev/null; then
   mv iTerm.app /Applications
 fi
 
+eval "$(zoxide init zsh)"
+
 cp -r ./.config/iterm2_profile ~/.config/
 
 defaults write com.googlecode.iterm2 PrefsCustomFolder -string '~/.config/iterm2_profile'
