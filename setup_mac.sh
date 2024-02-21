@@ -33,7 +33,7 @@ fi
 cp -r ./.config/nvim ~/.config/
 
 # Install yazi
-brew install yazi ffmpegthumbnailer unar jq poppler fd ripgrep fzf zoxide
+brew install yazi ffmpegthumbnailer unar jq poppler fd ripgrep fzf zoxide tako8ki/tap/gobang
 brew tap homebrew/cask-fonts && brew install --cask font-symbols-only-nerd-font
 
 brew install lazygit zoxide wget node fzf 
